@@ -1,4 +1,4 @@
-package com.therealdanvega;
+package com.narasimha.angular2springboot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TasksApplicationTests {
+public class Angular2SpringbootApplicationTests{
 
 	@Test
 	public void contextLoads() {

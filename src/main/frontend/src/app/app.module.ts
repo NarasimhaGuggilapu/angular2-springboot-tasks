@@ -1,27 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
+import{RouterModule, Routes}   from '@angular/router';
+import{HttpModule}   from '@angular/http';
+import{FormsModule}   from '@angular/forms';
 import { AppComponent } from './app.component';
-import { TasksComponent } from './tasks/tasks.component';
-import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
-import {TaskService} from "./tasks/task.service";
-import { TasksAddComponent } from './tasks/tasks-add/tasks-add.component';
+import { ListuserComponent } from './components/listuser/listuser.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import{UserService}   from './shared-service/user.service';
+const appRoutes:Routes=[
+  {path:'', component:ListuserComponent},
+    {path:'op', component:UserFormComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TasksComponent,
-    TasksListComponent,
-    TasksAddComponent
+    ListuserComponent,
+    UserFormComponent  
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
-    HttpModule
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [TaskService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
