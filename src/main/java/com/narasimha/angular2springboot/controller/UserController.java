@@ -27,6 +27,7 @@ public class UserController {
 
 	@GetMapping("/users")
 	public ResponseEntity<List<User>> listAllUsers() {
+		logger.info("Fetching Users");
 		List<User> users = userService.findAllUsers();
 		if (users.isEmpty()) {
 			return new ResponseEntity(HttpStatus.NO_CONTENT);

@@ -3,6 +3,13 @@ server:
   port: 8080
   contextPath: /Angular2SpringBoot
 ---
+logging:
+  level:
+    root: ERROR
+    org.springframework.web: DEBUG
+    com.narasimha.angular2springboot: DEBUG
+    org.hibernate: DEBUG
+---
 spring:
   profiles: local, default
 datasource:

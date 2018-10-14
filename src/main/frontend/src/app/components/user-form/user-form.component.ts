@@ -18,7 +18,7 @@ export class UserFormComponent implements OnInit {
   }
 
   processForm(){
-    if(this.user.id==undefined){
+    if(this.user.id== undefined){
        this._userService.createUser(this.user).subscribe((user)=>{
          console.log(user);
          this._rotuer.navigate(['/']);
