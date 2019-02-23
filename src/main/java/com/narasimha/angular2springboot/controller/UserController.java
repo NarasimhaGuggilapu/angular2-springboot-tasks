@@ -56,7 +56,7 @@ public class UserController {
 	public ResponseEntity<?> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
 		logger.info("Creating User : {}", user);
 
-		if (userService.isUserExist(user)) {
+		if (user != null && user.getId() != null && userService.isUserExist(user)) {
 			logger.error("Unable to create. A User with name {} already exist", user.getId());
 			return new ResponseEntity(new CustomErrorType("Unable to create. A User with name " +
 			user.getId() + " already exist."), HttpStatus.CONFLICT);

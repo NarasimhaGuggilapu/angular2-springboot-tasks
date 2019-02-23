@@ -21,14 +21,14 @@ export class UserFormComponent implements OnInit {
     if(this.user.id== undefined){
        this._userService.createUser(this.user).subscribe((user)=>{
          console.log(user);
-         this._rotuer.navigate(['/']);
+         this._rotuer.navigate(['']);
        },(error)=>{
          console.log(error);
        });
     }else{
        this._userService.updateUser(this.user.id).subscribe((user)=>{
          console.log(user);
-         this._rotuer.navigate(['/']);
+         this._rotuer.navigate(['']);
        },(error)=>{
          console.log(error);
        });

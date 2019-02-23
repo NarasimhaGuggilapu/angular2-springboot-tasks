@@ -28,12 +28,12 @@ export class ListuserComponent implements OnInit {
     });
   }
 
-   updateUser(user){  
-     this._userService.setter(user);
-     this._router.navigate(['/op']);
+   updateUser(user){
+        this._userService.setter(user);
+        this._router.navigate(['/op']);
 
 
-   }
+    }
    newUser(){
    let user = new User();
     this._userService.setter(user);
